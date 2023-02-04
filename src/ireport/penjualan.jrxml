@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="46dc5b2f-e003-428f-a0b5-43ee0fa84f0a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset_penjualan" uuid="0a1dbfc7-20ff-43e4-98ba-78f0be95666b">
+		<parameter name="PARA_DARI_ENGLISH" class="java.lang.String"/>
+		<parameter name="PARA_SAMPAI_ENGLISH" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT * FROM penjualan WHERE tgl_jual BETWEEN $P{PARA_DARI_ENGLISH} AND $P{PARA_SAMPAI_ENGLISH} ORDER BY tgl_jual]]>
+		</queryString>
+		<field name="no_faktur_jual" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="total_jual" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="tgl_jual" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="PARA_DARI_INDO" class="java.lang.String"/>
+	<parameter name="PARA_SAMPAI_INDO" class="java.lang.String"/>
+	<parameter name="PARA_DARI_ENGLISH" class="java.lang.String"/>
+	<parameter name="PARA_SAMPAI_ENGLISH" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM penjualan]]>
+	</queryString>
+	<field name="no_faktur_jual" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_jual" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_jual" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="77" splitType="Stretch">
+			<image>
+				<reportElement uuid="76c59be2-21e5-4df3-b892-5630de796f7f" x="1" y="0" width="59" height="60"/>
+				<imageExpression><![CDATA["C:\\Users\\Asus\\Documents\\NetBeansProjects\\fcopy\\src\\img\\60x59 logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="c401abcf-c1bd-41b4-8af3-d0343bff24f0" x="62" y="39" width="494" height="20"/>
+				<textElement>
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Telp. 0813 8119 9033 / 0858 8011 4530]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="94ddac68-897b-4dad-bf98-16d7dd91df0d" x="62" y="0" width="493" height="20"/>
+				<textElement>
+					<font fontName="Ebrima" size="14" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[DN3 Fotocopy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c3d92b31-8cc9-43fd-859a-e525e44f0a52" x="62" y="20" width="494" height="20"/>
+				<textElement>
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Jl. Penganten Ali, Ciracas, Jakarta Timur ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4d3feefa-4541-4c66-b260-b9277553dab5" x="1" y="52" width="57" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3b1a2518-6338-46fc-8094-c06b91019d29" x="58" y="52" width="65" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARA_DARI_ENGLISH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="13c83b34-a9b7-4c01-91f7-654018398ee4" x="123" y="52" width="20" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[s/d]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="4a5f4322-3208-49e7-b554-67fc9d05052e" x="143" y="52" width="65" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARA_SAMPAI_ENGLISH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2364c53c-a2a0-427c-8cd5-00a9764e566b" mode="Opaque" x="1" y="0" width="555" height="42" forecolor="#FFFFFF" backcolor="#006699"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB Demi" size="36"/>
+				</textElement>
+				<text><![CDATA[Laporan Penjualan]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="361a522f-7131-4902-94ca-9a04ebcb63c5" key="table" style="table" x="0" y="0" width="555" height="61"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset_penjualan" uuid="8ae4795a-efef-4c24-b8d5-3bd0b0569661">
+						<datasetParameter name="PARA_DARI_ENGLISH">
+							<datasetParameterExpression><![CDATA[$P{PARA_DARI_ENGLISH}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="PARA_SAMPAI_ENGLISH">
+							<datasetParameterExpression><![CDATA[$P{PARA_SAMPAI_ENGLISH}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="142" uuid="5f4a78a1-db5f-4e5b-a00c-b1fac27fc0a7">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="f56f20d7-4682-41ab-a1b6-0038d9762195" x="0" y="0" width="142" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[No. Faktur]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="09a2218d-0c99-4bf8-ba51-22f8c6a1b3d5" x="0" y="0" width="142" height="30"/>
+								<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+								<textElement>
+									<font size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{no_faktur_jual}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="803cc7fc-446c-45a6-a3b8-f2a756173833">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="f6febb2a-de43-46bd-9b4c-8f146c2f3d0b" x="0" y="0" width="90" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total Jual]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="e68bac20-374c-4352-8c84-a9cb6220ddf8" x="0" y="0" width="90" height="30"/>
+								<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+								<textElement textAlignment="Right">
+									<font size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{total_jual}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="217dfafd-8672-429a-ab7b-63933b0d8b98">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="8fa91795-06cd-4ce5-8dde-e322ebf388df" x="0" y="0" width="90" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Tanggal Jual]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="e19c2aa8-4255-4d21-9e0f-e3bb12a125a2" x="0" y="0" width="90" height="30"/>
+								<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+								<textElement>
+									<font size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy").format($F{tgl_jual})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f9c8e430-2d63-43cb-a8b8-0635a4a32991" x="430" y="81" width="125" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Akmal Zaini]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f9c8e430-2d63-43cb-a8b8-0635a4a32991" x="430" y="0" width="125" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Jakarta, 7 Juli 2022]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f9c8e430-2d63-43cb-a8b8-0635a4a32991" x="430" y="20" width="125" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Sales Staff]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement uuid="e9f73280-7902-4889-be7f-60736b0c5d2e" mode="Opaque" x="0" y="1" width="555" height="20" backcolor="#006699"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="07cd0a2a-d148-4833-a484-e73f850bd5e7" x="0" y="0" width="261" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="60ab68bd-224b-40fa-bbd0-03290b2caed6" x="465" y="0" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<paragraph rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement uuid="8586f5ff-167e-4602-92cc-ac814c41f067" x="515" y="0" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<paragraph rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>
